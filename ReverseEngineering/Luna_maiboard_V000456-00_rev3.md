@@ -35,8 +35,8 @@ This sections details how the pins of the process are configured and (potentiall
 |             5 | PIO0_1                |                  |               | Connected to S6 - RT (Right trigger digital) for purpose of enacting USB In-Systen Programming (i.e. update firmware via "FAT" file system) |
 |             6 | PIO1_7                | PIO1_7           | Out           | Active Low haptics enable. |
 |             7 | V<sub>SS</sub>        | V<sub>SS</sub>   | In            | V<sub>SS</sub> |
-|             8 | XTALIN                |                  |               | |
-|             9 | XTALOUT               |                  |               | |
+|             8 | XTALIN                | Oscillator Input | In            | External Oscillator Input |
+|             9 | XTALOUT               | Oscillator Output| Out           | External Oscillator Output |
 |            10 | V<sub>DD</sub>        | V<sub>DD</sub>   | In            | V<sub>DD</sub> |
 |            11 | PIO0_20               |                  |               | |
 |            12 | PIO1_10               | PIO1_10          | Out           | TODO: get more info on this... Set as output GPIO and driven ?? (during init). Related to AD? Or has to do with BOD and controller booting up... (routed to pin ??(middle) on U10 on front of PCB) |
@@ -47,13 +47,13 @@ This sections details how the pins of the process are configured and (potentiall
 |            17 | PIO1_1                | PIO1_1           | Out           | Active low enable for analog triggers (Left = AD0, Right = AD2) |
 |            18 | PIO1_20               | PIO1_20          | In            | S17 - FRONT_L (Front left arrow button) |
 |            19 | PIO0_3                | USB_VBUS         | In            | Monitors the presence of USB bus power. Interrupt (PINT0) set to monitor if this changes. |
-|            20 | PIO0_4                | I2C SCL          | In/Out        | Connected to MPU-6500 I2C SCL |
+|            20 | PIO0_4                | I2C SCL          | Out           | Connected to MPU-6500 I2C SCL |
 |            21 | PIO0_5                | I2C SDA          | In/Out        | Connected to MPU-6500 I2C SDA |
 |            22 | PIO0_21               | CT16B1_MAT0      | Out           | Control Steam Button LED (LED1) |
 |            23 | PIO1_17               | RXD (USART)      | In            | Connected to Nordic Semiconductor nRF51822 Bluetooth Smart and 2.4GHz proprietary SoC Pin 21 |
 |            24 | PIO1_23               |                  |               | Connected to MPU-6500 Pin 12 (INT) |
-|            25 | USB_DM                |                  |               | |
-|            26 | USB_DP                |                  |               | |
+|            25 | USB_DM                | USB Data-        |               | USB Differential Data |
+|            26 | USB_DP                | USB Data+        |               | USB Differential Data |
 |            27 | PIO1_24               | PIO1_24          | In?           | Related to PIO1_8. Related to USART maybe? TODO |
 |            28 | PIO1_18               | TXD (USART)      | Out           | Connected to Nordic Semiconductor nRF51822 Bluetooth Smart and 2.4GHz proprietary SoC Pin 20 | 
 |            29 | PIO0_6                | not(USB_CONNECT) | Out           | Signal used to switch an external 1.5 k resistor under software control. Used with the SoftConnect USB feature. |
